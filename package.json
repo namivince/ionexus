@@ -1,0 +1,27 @@
+{
+  "name": "ionexus-md-processor",
+  "version": "1.0.0",
+  "description": "Xử lý các file markdown của iONexus",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "node scripts/build.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "markdown",
+    "ionexus",
+    "processor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.1.0",
+    "gray-matter": "^4.0.3",
+    "handlebars": "^4.7.7",
+    "marked": "^4.3.0",
+    "nodemon": "^2.0.22"
+  }
+}
