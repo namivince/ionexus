@@ -1,7 +1,7 @@
-# iONexus UI Mockup Spec
+# IONEXUS UI Mockup Spec
 
-Bộ file `.md` mô tả cấu trúc màn hình và component cho iONexus Platform.  
-Dùng để gen mockup UI dựa trên style Property Finder (đổi brand sang iONexus).
+Bộ file `.md` mô tả cấu trúc màn hình và component cho IONEXUS Platform.  
+Dùng để gen mockup UI dựa trên style Property Finder (đổi brand sang IONEXUS).
 
 ## Cấu trúc thư mục
 - `_shared/`: định nghĩa component, màu, typography, pattern dùng chung.  
