@@ -1,0 +1,14 @@
+{
+  "title": "Shared — Colors",
+  "sections": [
+    {
+      "title": "Brand Palette",
+      "content": "<ul>\n<li>Primary: <code>#1A237E</code> (iONexus Blue)</li>\n<li>Secondary: <code>#FF5252</code> (Accent Red)</li>\n<li>Background: <code>#FFFFFF</code></li>\n<li>Text primary: <code>#212121</code></li>\n<li>Text secondary: <code>#757575</code></li>\n<li>Border: <code>#E0E0E0</code></li>\n<li>Success: <code>#16A34A</code></li>\n<li>Warning: <code>#FFC107</code></li>\n<li>Error: <code>#D32F2F</code></li>\n</ul>"
+    },
+    {
+      "title": "Usage",
+      "content": "<ul>\n<li>Buttons: Primary Blue background, white text.  </li>\n<li>Links: Primary Blue text, underline on hover.  </li>\n<li>Cards: White background, subtle shadow, border <code>#E0E0E0</code>.</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

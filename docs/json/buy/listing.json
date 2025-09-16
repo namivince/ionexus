@@ -1,0 +1,30 @@
+{
+  "title": "Buy Listing",
+  "slug": "/buy/listing",
+  "page_type": "listing",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Mục tiêu",
+      "content": "<p>Danh sách BĐS để bán.</p>"
+    },
+    {
+      "title": "Components",
+      "content": "<ul>\n<li>Search bar + filters</li>\n<li>Sort dropdown</li>\n<li>Grid/List toggle</li>\n<li>Property cards</li>\n</ul>"
+    },
+    {
+      "title": "Wireframe",
+      "content": "<p>[Search + Filters]\n[Sort dropdown]\n[Grid of Property Cards]\n[Pagination]</p><p>pgsql\nSao chép mã</p>"
+    },
+    {
+      "title": "Sample JSON",
+      "content": "<pre><code class=\"language-json\">{\n  \"items\": [\n    {\"id\":\"p1\",\"title\":\"Apartment in Marina\",\"price\":2000000,\"beds\":2,\"sqft\":1200}\n  ]\n}\nyaml\nSao chép mã\n\n---\n\n## `buy/detail.md`\n```markdown\n---\ntitle: \"Buy Detail\"\nslug: \"/buy/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Buy Detail\n\n## Mục tiêu\nHiển thị chi tiết 1 bất động sản để mua.\n\n## Layout\n- Media carousel\n- Title, price, specs\n- Agent info\n- Inquiry form (contact / WhatsApp)\n- Related properties\n\n## Sample JSON\n```json\n{\n  \"id\":\"p1\",\n  \"title\":\"Apartment in Marina\",\n  \"price\":2000000,\n  \"beds\":2,\n  \"baths\":2,\n  \"sqft\":1200,\n  \"location\":\"Dubai Marina\"\n}\nyaml\nSao chép mã\n\n---\n\n## `rent/rent_overview.md`\n```markdown\n---\ntitle: \"Rent Overview\"\nslug: \"/rent\"\npage_type: \"overview\"\nbrand: \"iONexus\"\n---\n\n# Rent Overview\n\n## Mục tiêu\nTrang landing con cho user quan tâm **thuê**.\n\n## Layout\n- Hero search (Rent tab active)\n- Featured rentals\n- Explore by Area\n- Articles: \"Rental guide\"\n</code></pre>"
+    }
+  ],
+  "codeBlocks": [
+    {
+      "language": "json",
+      "code": "{\n  \"items\": [\n    {\"id\":\"p1\",\"title\":\"Apartment in Marina\",\"price\":2000000,\"beds\":2,\"sqft\":1200}\n  ]\n}\nyaml\nSao chép mã\n\n---\n\n## `buy/detail.md`\n```markdown\n---\ntitle: \"Buy Detail\"\nslug: \"/buy/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Buy Detail\n\n## Mục tiêu\nHiển thị chi tiết 1 bất động sản để mua.\n\n## Layout\n- Media carousel\n- Title, price, specs\n- Agent info\n- Inquiry form (contact / WhatsApp)\n- Related properties\n\n## Sample JSON\n```json\n{\n  \"id\":\"p1\",\n  \"title\":\"Apartment in Marina\",\n  \"price\":2000000,\n  \"beds\":2,\n  \"baths\":2,\n  \"sqft\":1200,\n  \"location\":\"Dubai Marina\"\n}\nyaml\nSao chép mã\n\n---\n\n## `rent/rent_overview.md`\n```markdown\n---\ntitle: \"Rent Overview\"\nslug: \"/rent\"\npage_type: \"overview\"\nbrand: \"iONexus\"\n---\n\n# Rent Overview\n\n## Mục tiêu\nTrang landing con cho user quan tâm **thuê**.\n\n## Layout\n- Hero search (Rent tab active)\n- Featured rentals\n- Explore by Area\n- Articles: \"Rental guide\"\n"
+    }
+  ]
+}

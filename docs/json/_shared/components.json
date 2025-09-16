@@ -1,0 +1,26 @@
+{
+  "title": "Shared — Components",
+  "sections": [
+    {
+      "title": "Buttons",
+      "content": "<ul>\n<li>Primary Button: Blue bg, white text, radius 8px</li>\n<li>Secondary Button: White bg, blue border, blue text</li>\n</ul>"
+    },
+    {
+      "title": "Inputs",
+      "content": "<ul>\n<li>Text input with label + placeholder</li>\n<li>Dropdown select</li>\n<li>Filter chips (toggle active)</li>\n</ul>"
+    },
+    {
+      "title": "Cards",
+      "content": "<ul>\n<li>Property card: image, title, price, specs, badges</li>\n<li>Project card: image, title, “from price”, location, badges</li>\n<li>Agency card: logo, name, rating, listing count</li>\n</ul>"
+    },
+    {
+      "title": "Navigation",
+      "content": "<ul>\n<li>Header nav with tabs (Buy, Rent, Commercial…)</li>\n<li>Footer with multi-column links</li>\n</ul>"
+    },
+    {
+      "title": "Misc",
+      "content": "<ul>\n<li>Carousel (arrows + auto-slide)</li>\n<li>Tile (image background, title overlay)</li>\n<li>Logo grid</li>\n<li>Article card</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Profile / Account",
+  "slug": "/account/profile",
+  "page_type": "profile",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Layout",
+      "content": "<ul>\n<li>Avatar + info</li>\n<li>Tabs: Profile | Documents | Bookings | Support</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

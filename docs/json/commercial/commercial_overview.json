@@ -1,0 +1,13 @@
+{
+  "title": "Commercial Overview",
+  "slug": "/commercial",
+  "page_type": "overview",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Mục tiêu",
+      "content": "<p>Trang landing con cho commercial properties.</p>"
+    }
+  ],
+  "codeBlocks": []
+}

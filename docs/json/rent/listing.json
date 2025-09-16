@@ -1,0 +1,26 @@
+{
+  "title": "Rent Listing",
+  "slug": "/rent/listing",
+  "page_type": "listing",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Mục tiêu",
+      "content": "<p>Danh sách BĐS cho thuê.</p>"
+    },
+    {
+      "title": "Components",
+      "content": "<ul>\n<li>Search bar + filters</li>\n<li>Rent price per month</li>\n<li>Property cards</li>\n</ul>"
+    },
+    {
+      "title": "Sample JSON",
+      "content": "<pre><code class=\"language-json\">{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n</code></pre>"
+    }
+  ],
+  "codeBlocks": [
+    {
+      "language": "json",
+      "code": "{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n"
+    }
+  ]
+}

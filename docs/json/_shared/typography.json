@@ -1,0 +1,18 @@
+{
+  "title": "Shared — Typography",
+  "sections": [
+    {
+      "title": "Font Family",
+      "content": "<ul>\n<li>Primary: <code>Inter, sans-serif</code></li>\n<li>Secondary: <code>Roboto, sans-serif</code></li>\n</ul>"
+    },
+    {
+      "title": "Font Scale",
+      "content": "<ul>\n<li>H1: 32px, bold, #212121</li>\n<li>H2: 24px, semibold</li>\n<li>H3: 20px, semibold</li>\n<li>Body: 16px, regular</li>\n<li>Caption: 14px, #757575</li>\n</ul>"
+    },
+    {
+      "title": "Usage",
+      "content": "<ul>\n<li>Heading page: H1</li>\n<li>Section heading: H2</li>\n<li>Card title: H3</li>\n<li>Body text: Body</li>\n<li>Labels, helper text: Caption</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

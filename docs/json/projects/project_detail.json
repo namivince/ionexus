@@ -1,0 +1,13 @@
+{
+  "title": "Project Detail",
+  "slug": "/projects/{slug}",
+  "page_type": "detail",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Layout",
+      "content": "<ul>\n<li>Brochure download</li>\n<li>Floorplans</li>\n<li>Payment plan</li>\n<li>Construction updates</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

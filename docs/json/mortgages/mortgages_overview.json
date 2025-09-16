@@ -1,0 +1,13 @@
+{
+  "title": "Mortgages Overview",
+  "slug": "/mortgages",
+  "page_type": "overview",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Layout",
+      "content": "<ul>\n<li>Calculator form</li>\n<li>Articles: Mortgage guide</li>\n<li>CTA: Contact mortgage advisor</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

@@ -1,0 +1,18 @@
+{
+  "title": "iONexus UI Mockup Spec",
+  "sections": [
+    {
+      "title": "Cấu trúc thư mục",
+      "content": "<ul>\n<li><code>_shared/</code>: định nghĩa component, màu, typography, pattern dùng chung.  </li>\n<li><code>landing/</code>: trang landing page công khai.  </li>\n<li><code>buy/</code>, <code>rent/</code>, <code>commercial/</code>, <code>projects/</code>: flow chính cho end-user.  </li>\n<li><code>agents/</code>: trang Find Agent.  </li>\n<li><code>mortgages/</code>: trang Mortgage.  </li>\n<li><code>account/</code>: trang auth + profile.  </li>\n<li><code>assets/</code>: ảnh mock và icon.</li>\n</ul>"
+    },
+    {
+      "title": "Hướng dẫn",
+      "content": "<ul>\n<li>Mỗi file <code>.md</code> đại diện 1 màn hình.  </li>\n<li>Nội dung bao gồm:<ul>\n<li><strong>Mục tiêu</strong></li>\n<li><strong>User stories</strong></li>\n<li><strong>Wireframe ASCII</strong></li>\n<li><strong>Components</strong></li>\n<li><strong>Fields/Validation</strong></li>\n<li><strong>States</strong></li>\n<li><strong>Events/Navigation</strong></li>\n<li><strong>Sample JSON</strong></li>\n</ul>\n</li>\n</ul>"
+    },
+    {
+      "title": "Version",
+      "content": "<ul>\n<li>Spec v0.1.0 (2025-09-16)</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Commercial Listing",
+  "slug": "/commercial/listing",
+  "page_type": "listing",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Mục tiêu",
+      "content": "<p>Danh sách BĐS thương mại.</p>"
+    }
+  ],
+  "codeBlocks": []
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iONexus Markdown Processor - iONexus</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Inline CSS để đảm bảo giao diện cơ bản */
+    :root {
+      --color-primary: #1A237E;
+      --color-secondary: #FF5252;
+      --color-background: #FFFFFF;
+      --color-text-primary: #212121;
+      --color-text-secondary: #757575;
+      --color-border: #E0E0E0;
+      --color-success: #16A34A;
+      --color-warning: #FFC107;
+      --color-error: #D32F2F;
+      --color-gray-50: #FAFAFA;
+      --color-gray-100: #F5F5F5;
+      --color-gray-200: #EEEEEE;
+      --color-gray-300: #E0E0E0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--color-text-primary);
+      background-color: var(--color-gray-50);
+    }
+    .header {
+      background-color: white;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .main-nav {
+      display: flex;
+      column-gap: 24px;
+    }
+    .main-nav a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .main-nav a.active {
+      color: var(--color-primary);
+    }
+    .hero {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 60px 0;
+      background-image: linear-gradient(rgba(26, 35, 126, 0.9), rgba(26, 35, 126, 0.9)), url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .search-container {
+      background-color: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+    }
+    .search-tabs {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .search-tab {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .search-tab.active {
+      color: var(--color-primary);
+      border-bottom: 3px solid var(--color-primary);
+    }
+    .search-form {
+      display: flex;
+      gap: 16px;
+    }
+    .search-input {
+      flex: 1;
+    }
+    .search-input input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-gray-300);
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .search-button {
+      padding: 12px 24px;
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .filter-chip {
+      padding: 8px 16px;
+      background-color: var(--color-gray-100);
+      border: 1px solid var(--color-gray-300);
+      border-radius: 100px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .filter-chip.active {
+      background-color: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+    .properties {
+      padding: 40px 0;
+    }
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .property-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    .property-image {
+      height: 200px;
+      background-color: var(--color-gray-200);
+      position: relative;
+    }
+    .property-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .property-content {
+      padding: 16px;
+    }
+    .property-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .property-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .property-location {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .property-features {
+      display: flex;
+      gap: 16px;
+      color: var(--color-text-secondary);
+      font-size: 14px;
+    }
+    .footer {
+      background-color: #212121;
+      color: white;
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+    .footer-links a {
+      color: #9e9e9e;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">iONexus</a>
+      <nav class="main-nav">
+        <a href="/html/buy/buy_overview.html" class="">Buy</a>
+        <a href="/html/rent/rent_overview.html" class="">Rent</a>
+        <a href="/html/commercial/commercial_overview.html" class="">Commercial</a>
+        <a href="/html/projects/projects_overview.html" class="">New Projects</a>
+        <a href="/html/agents/find_agent.html" class="">Find Agent</a>
+      </nav>
+      <div class="user-nav">
+        <a href="/html/mortgages/mortgages_overview.html">Mortgages</a>
+        <a href="/html/account/auth.html" class="btn btn-outline">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>iONexus</h3>
+          <ul class="footer-links">
+            <li><a href="/html/buy/buy_overview.html">Buy</a></li>
+            <li><a href="/html/rent/rent_overview.html">Rent</a></li>
+            <li><a href="/html/commercial/commercial_overview.html">Commercial</a></li>
+            <li><a href="/html/projects/projects_overview.html">New Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>About</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="#">Email: info@ionexus.com</a></li>
+            <li><a href="#">Phone: +971 4 123 4567</a></li>
+            <li><a href="#">Address: Dubai, UAE</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 iONexus. All rights reserved.</div>
+        <div>
+          <a href="#">Privacy Policy</a> | 
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

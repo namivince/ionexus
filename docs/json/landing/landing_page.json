@@ -1,0 +1,40 @@
+{
+  "title": "Landing Page — iONexus",
+  "slug": "/",
+  "page_type": "landing",
+  "brand": "iONexus",
+  "version": "0.1.0",
+  "updated": "2025-09-16",
+  "sections": [
+    {
+      "title": "Mục tiêu",
+      "content": "<p>Trang chủ công khai, tập trung vào tìm kiếm BĐS (giống Property Finder).</p>"
+    },
+    {
+      "title": "Navigation",
+      "content": "<ul>\n<li>Logo iONexus</li>\n<li>Tabs: Buy | Rent | Commercial | New Projects | Find Agent | Explore | Mortgages</li>\n<li>CTA: Login/Register</li>\n</ul>"
+    },
+    {
+      "title": "Hero / Search",
+      "content": "<ul>\n<li>Tabset: Buy/Rent/Commercial/Projects</li>\n<li>Input: City/Community/Building</li>\n<li>CTA: Find</li>\n<li>Filter chips: Property Type, Beds &amp; Baths, Price, More</li>\n<li>Toggle: Map View</li>\n</ul>"
+    },
+    {
+      "title": "Sections",
+      "content": "<ul>\n<li>Popular Searches</li>\n<li>Featured Projects (carousel)</li>\n<li>Explore by Area (tiles)</li>\n<li>Featured Properties (grid)</li>\n<li>Featured Agencies</li>\n<li>Articles &amp; Guides</li>\n<li>CTA: Download app / Create alert / Subscribe newsletter</li>\n<li>Footer links</li>\n</ul>"
+    },
+    {
+      "title": "Wireframe",
+      "content": "<p>[Header nav]\n[Hero Search]\n[Popular Searches]\n[Featured Projects Carousel]\n[Explore by Area Tiles]\n[Featured Properties Grid]\n[Featured Agencies Grid]\n[Articles &amp; Guides]\n[CTA Section]\n[Footer]</p><p>pgsql\nSao chép mã</p>"
+    },
+    {
+      "title": "Sample JSON",
+      "content": "<pre><code class=\"language-json\">{\n  \"mode\": \"buy\",\n  \"query\": \"Dubai Marina\",\n  \"filters\": {\n    \"property_type\": [\"Apartment\"],\n    \"beds\": 2,\n    \"price_max\": 2000000\n  },\n  \"popular\": [\"1BR Marina\", \"Villas Palm Jumeirah\"],\n  \"featured_projects\": [{\"id\":\"p1\",\"title\":\"Canal Crown Tower\"}]\n}\nyaml\nSao chép mã\n\n---\n\n## `buy/buy_overview.md`\n```markdown\n---\ntitle: \"Buy Overview\"\nslug: \"/buy\"\npage_type: \"overview\"\nbrand: \"iONexus\"\n---\n\n# Buy Overview\n\n## Mục tiêu\nTrang landing con cho user quan tâm **mua**.\n\n## Layout\n- Hero search (Buy tab active)\n- Section: Featured Projects for Sale\n- Section: Explore by Area\n- Articles: \"How to buy in Dubai\", \"Mortgage tips\"\n\n## Navigation\n- Link sang `/buy/listing`\n</code></pre>"
+    }
+  ],
+  "codeBlocks": [
+    {
+      "language": "json",
+      "code": "{\n  \"mode\": \"buy\",\n  \"query\": \"Dubai Marina\",\n  \"filters\": {\n    \"property_type\": [\"Apartment\"],\n    \"beds\": 2,\n    \"price_max\": 2000000\n  },\n  \"popular\": [\"1BR Marina\", \"Villas Palm Jumeirah\"],\n  \"featured_projects\": [{\"id\":\"p1\",\"title\":\"Canal Crown Tower\"}]\n}\nyaml\nSao chép mã\n\n---\n\n## `buy/buy_overview.md`\n```markdown\n---\ntitle: \"Buy Overview\"\nslug: \"/buy\"\npage_type: \"overview\"\nbrand: \"iONexus\"\n---\n\n# Buy Overview\n\n## Mục tiêu\nTrang landing con cho user quan tâm **mua**.\n\n## Layout\n- Hero search (Buy tab active)\n- Section: Featured Projects for Sale\n- Section: Explore by Area\n- Articles: \"How to buy in Dubai\", \"Mortgage tips\"\n\n## Navigation\n- Link sang `/buy/listing`\n"
+    }
+  ]
+}

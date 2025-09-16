@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgages - iONexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --color-primary: #1A237E;
+      --color-secondary: #FF5252;
+      --color-background: #FFFFFF;
+      --color-text-primary: #212121;
+      --color-text-secondary: #757575;
+      --color-border: #E0E0E0;
+      --color-success: #16A34A;
+      --color-warning: #FFC107;
+      --color-error: #D32F2F;
+      --color-gray-50: #FAFAFA;
+      --color-gray-100: #F5F5F5;
+      --color-gray-200: #EEEEEE;
+      --color-gray-300: #E0E0E0;
+      --color-gray-400: #BDBDBD;
+      --color-gray-500: #9E9E9E;
+      --color-gray-600: #757575;
+      --color-gray-700: #616161;
+      --color-gray-800: #424242;
+      --color-gray-900: #212121;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: var(--color-text-primary);
+      background-color: var(--color-gray-50);
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header {
+      background-color: white;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .main-nav {
+      display: flex;
+      column-gap: 24px;
+    }
+
+    .main-nav a {
+      font-weight: 500;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .main-nav a.active {
+      color: var(--color-primary);
+    }
+
+    .main-nav a.active:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--color-primary);
+    }
+
+    .user-nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0f1654;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 60px 0;
+      background-image: linear-gradient(rgba(26, 35, 126, 0.9), rgba(26, 35, 126, 0.9)), url('https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      background-color: var(--color-gray-100);
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+    .breadcrumb-list {
+      display: flex;
+      list-style: none;
+    }
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-item:not(:last-child):after {
+      content: '/';
+      margin: 0 8px;
+      color: var(--color-gray-400);
+    }
+
+    .breadcrumb-item a {
+      color: var(--color-gray-600);
+    }
+
+    .breadcrumb-item.active {
+      color: var(--color-primary);
+    }
+
+    /* Calculator Section */
+    .calculator-section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .calculator-card {
+      background-color: white;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+    }
+
+    .calculator-card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius-md);
+      font-size: 16px;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.2);
+    }
+
+    .range-slider {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .result-box {
+      background-color: var(--color-gray-100);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-top: 24px;
+    }
+
+    .result-title {
+      font-size: 14px;
+      color: var(--color-gray-600);
+      margin-bottom: 8px;
+    }
+
+    .result-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .result-details {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--color-gray-600);
+    }
+
+    .result-detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .result-detail-value {
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    /* Tips Section */
+    .tips-section {
+      padding: 40px 0;
+      background-color: var(--color-gray-100);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .tip-card {
+      background-color: white;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tip-icon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .tip-icon i {
+      font-size: 24px;
+    }
+
+    .tip-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .tip-content {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+    }
+
+    /* Lenders Section */
+    .lenders-section {
+      padding: 40px 0;
+    }
+
+    .lenders-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .lender-card {
+      background-color: white;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .lender-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .lender-logo {
+      height: 60px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lender-logo img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .lender-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .lender-rate {
+      color: var(--color-success);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 60px 0;
+      background-color: var(--color-primary);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .cta-subtitle {
+      font-size: 16px;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: var(--color-primary);
+      border: none;
+    }
+
+    .btn-white:hover {
+      background-color: var(--color-gray-100);
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .btn-white-outline {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+
+    .btn-white-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-gray-900);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: var(--color-gray-400);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-gray-800);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-gray-500);
+      font-size: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .lenders-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+      }
+      
+      .main-nav {
+        margin: 16px 0;
+      }
+      
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .lenders-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">iONexus</a>
+      <nav class="main-nav">
+        <a href="index.html">Buy</a>
+        <a href="rent.html">Rent</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="new-projects.html">New Projects</a>
+        <a href="find-agent.html">Find Agent</a>
+      </nav>
+      <div class="user-nav">
+        <a href="mortgages.html" class="active">Mortgages</a>
+        <a href="#" class="btn btn-outline">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Mortgages</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Mortgage Calculator</h1>
+      <p>Plan your finances and find the best mortgage options for your dream property in Dubai</p>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="calculator-section">
+    <div class="container">
+      <h2 class="section-title">Mortgage Calculators</h2>
+      <div class="calculator-grid">
+        <!-- Affordability Calculator -->
+        <div class="calculator-card">
+          <h3>Affordability Calculator</h3>
+          <p>Find out how much you can borrow based on your income and expenses.</p>
+          
+          <form>
+            <div class="form-group">
+              <label for="monthly-income">Monthly Income (AED)</label>
+              <input type="number" id="monthly-income" class="form-control" value="30000">
+              <input type="range" class="range-slider" min="10000" max="100000" step="1000" value="30000">
+            </div>
+            
+            <div class="form-group">
+              <label for="monthly-expenses">Monthly Expenses (AED)</label>
+              <input type="number" id="monthly-expenses" class="form-control" value="10000">
+              <input type="range" class="range-slider" min="0" max="50000" step="1000" value="10000">
+            </div>
+            
+            <div class="form-group">
+              <label for="loan-term">Loan Term (Years)</label>
+              <input type="number" id="loan-term" class="form-control" value="25">
+              <input type="range" class="range-slider" min="5" max="30" step="1" value="25">
+            </div>
+            
+            <div class="form-group">
+              <label for="interest-rate">Interest Rate (%)</label>
+              <input type="number" id="interest-rate" class="form-control" value="3.5" step="0.1">
+              <input type="range" class="range-slider" min="1" max="10" step="0.1" value="3.5">
+            </div>
+            
+            <div class="result-box">
+              <div class="result-title">Maximum Loan Amount</div>
+              <div class="result-value">AED 2,500,000</div>
+              
+              <div class="result-details">
+                <div class="result-detail">
+                  <span>Monthly Payment</span>
+                  <span class="result-detail-value">AED 12,500</span>
+                </div>
+                <div class="result-detail">
+                  <span>Debt-to-Income Ratio</span>
+                  <span class="result-detail-value">42%</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Monthly Payment Calculator -->
+        <div class="calculator-card">
+          <h3>Monthly Payment Calculator</h3>
+          <p>Calculate your monthly mortgage payments based on property price and down payment.</p>
+          
+          <form>
+            <div class="form-group">
+              <label for="property-price">Property Price (AED)</label>
+              <input type="number" id="property-price" class="form-control" value="1500000">
+              <input type="range" class="range-slider" min="500000" max="10000000" step="100000" value="1500000">
+            </div>
+            
+            <div class="form-group">
+              <label for="down-payment">Down Payment (%)</label>
+              <input type="number" id="down-payment" class="form-control" value="20">
+              <input type="range" class="range-slider" min="20" max="80" step="5" value="20">
+            </div>
+            
+            <div class="form-group">
+              <label for="payment-loan-term">Loan Term (Years)</label>
+              <input type="number" id="payment-loan-term" class="form-control" value="25">
+              <input type="range" class="range-slider" min="5" max="30" step="1" value="25">
+            </div>
+            
+            <div class="form-group">
+              <label for="payment-interest-rate">Interest Rate (%)</label>
+              <input type="number" id="payment-interest-rate" class="form-control" value="3.5" step="0.1">
+              <input type="range" class="range-slider" min="1" max="10" step="0.1" value="3.5">
+            </div>
+            
+            <div class="result-box">
+              <div class="result-title">Monthly Payment</div>
+              <div class="result-value">AED 6,000</div>
+              
+              <div class="result-details">
+                <div class="result-detail">
+                  <span>Loan Amount</span>
+                  <span class="result-detail-value">AED 1,200,000</span>
+                </div>
+                <div class="result-detail">
+                  <span>Total Interest</span>
+                  <span class="result-detail-value">AED 600,000</span>
+                </div>
+                <div class="result-detail">
+                  <span>Total Payment</span>
+                  <span class="result-detail-value">AED 1,800,000</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="tips-section">
+    <div class="container">
+      <h2 class="section-title">Mortgage Tips</h2>
+      <div class="tips-grid">
+        <!-- Tip 1 -->
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-percentage"></i>
+          </div>
+          <h3 class="tip-title">Loan-to-Value (LTV) Ratio</h3>
+          <p class="tip-content">For expatriates, banks in Dubai typically offer up to 75% LTV for properties under AED 5 million, and 65% for properties above that. UAE nationals can get up to 80% LTV. This means you'll need a minimum down payment of 20-35% depending on your residency status and property value.</p>
+        </div>
+        
+        <!-- Tip 2 -->
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <h3 class="tip-title">Documentation Requirements</h3>
+          <p class="tip-content">Be prepared with your passport, visa, Emirates ID, salary certificate, bank statements (6 months), and credit report. Self-employed individuals will need trade license and audited financial statements. Having these documents ready can speed up your mortgage approval process.</p>
+        </div>
+        
+        <!-- Tip 3 -->
+        <div class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3 class="tip-title">Additional Costs</h3>
+          <p class="tip-content">Beyond the down payment, budget for Dubai Land Department fee (4%), registration fee (0.25%), bank processing fee (1%), valuation fee (AED 2,500-3,500), and mortgage registration (0.25%). These additional costs typically add up to around 7-8% of the property value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lenders Section -->
+  <section class="lenders-section">
+    <div class="container">
+      <h2 class="section-title">Our Partner Banks</h2>
+      <div class="lenders-grid">
+        <!-- Lender 1 -->
+        <div class="lender-card">
+          <div class="lender-logo">
+            <img src="https://via.placeholder.com/150x60?text=Emirates+NBD" alt="Emirates NBD">
+          </div>
+          <h3 class="lender-name">Emirates NBD</h3>
+          <div class="lender-rate">From 3.49% p.a.</div>
+          <a href="#" class="btn btn-primary">Get Quote</a>
+        </div>
+        
+        <!-- Lender 2 -->
+        <div class="lender-card">
+          <div class="lender-logo">
+            <img src="https://via.placeholder.com/150x60?text=ADCB" alt="ADCB">
+          </div>
+          <h3 class="lender-name">Abu Dhabi Commercial Bank</h3>
+          <div class="lender-rate">From 3.75% p.a.</div>
+          <a href="#" class="btn btn-primary">Get Quote</a>
+        </div>
+        
+        <!-- Lender 3 -->
+        <div class="lender-card">
+          <div class="lender-logo">
+            <img src="https://via.placeholder.com/150x60?text=Mashreq" alt="Mashreq">
+          </div>
+          <h3 class="lender-name">Mashreq Bank</h3>
+          <div class="lender-rate">From 3.99% p.a.</div>
+          <a href="#" class="btn btn-primary">Get Quote</a>
+        </div>
+        
+        <!-- Lender 4 -->
+        <div class="lender-card">
+          <div class="lender-logo">
+            <img src="https://via.placeholder.com/150x60?text=DIB" alt="DIB">
+          </div>
+          <h3 class="lender-name">Dubai Islamic Bank</h3>
+          <div class="lender-rate">From 3.89% p.a.</div>
+          <a href="#" class="btn btn-primary">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Need Help With Your Mortgage?</h2>
+      <p class="cta-subtitle">Our mortgage advisors can help you find the best rates and guide you through the entire process.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-white">Talk to a Mortgage Advisor</a>
+        <a href="#" class="btn btn-white-outline">Compare Mortgage Rates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>iONexus</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Buy</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="new-projects.html">New Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>About</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="#">Email: info@ionexus.com</a></li>
+            <li><a href="#">Phone: +971 4 123 4567</a></li>
+            <li><a href="#">Address: Dubai, UAE</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 iONexus. All rights reserved.</div>
+        <div>
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JavaScript for the range sliders
+    document.querySelectorAll('.range-slider').forEach(slider => {
+      const input = slider.previousElementSibling;
+      
+      // Update input when slider changes
+      slider.addEventListener('input', () => {
+        input.value = slider.value;
+      });
+      
+      // Update slider when input changes
+      input.addEventListener('input', () => {
+        slider.value = input.value;
+      });
+    });
+  </script>
+</body>
+</html>

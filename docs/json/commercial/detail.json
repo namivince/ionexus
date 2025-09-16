@@ -1,0 +1,13 @@
+{
+  "title": "Commercial Detail",
+  "slug": "/commercial/property/{id}",
+  "page_type": "detail",
+  "brand": "iONexus",
+  "sections": [
+    {
+      "title": "Layout",
+      "content": "<ul>\n<li>Media carousel</li>\n<li>Specs (area, type: office/shop/warehouse)</li>\n<li>Inquiry CTA</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}

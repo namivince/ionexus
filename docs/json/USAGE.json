@@ -1,0 +1,43 @@
+{
+  "title": "iONexus Markdown Processor",
+  "sections": [
+    {
+      "title": "Cài đặt",
+      "content": "<pre><code class=\"language-bash\"># Cài đặt các thư viện cần thiết\nnpm install\n</code></pre>"
+    },
+    {
+      "title": "Sử dụng",
+      "content": "<h3 id=\"chạy-build\">Chạy build</h3><pre><code class=\"language-bash\"># Chạy script build để tạo output HTML/JSON\nnpm run build\n</code></pre><p>Kết quả sẽ được lưu trong thư mục <code>build/</code>:</p><ul>\n<li><code>build/html/</code>: Các file HTML</li>\n<li><code>build/json/</code>: Các file JSON</li>\n<li><code>build/index.html</code>: Trang chủ HTML</li>\n<li><code>build/index.json</code>: Danh sách tất cả các file đã xử lý</li>\n<li><code>build/assets/</code>: Các file CSS và tài nguyên khác</li>\n</ul><h3 id=\"cấu-trúc-dự-án\">Cấu trúc dự án</h3><pre><code>ionexus/\n├─ src/\n│  └─ processor.js        # Module xử lý các file markdown\n├─ scripts/\n│  └─ build.js            # Script build\n├─ index.js               # Entry point\n├─ package.json           # Thông tin dự án và dependencies\n└─ build/                 # Thư mục output (tạo tự động)\n   ├─ html/               # Các file HTML\n   ├─ json/               # Các file JSON\n   ├─ assets/             # CSS và tài nguyên\n   ├─ index.html          # Trang chủ HTML\n   └─ index.json          # Danh sách tất cả các file\n</code></pre><h3 id=\"tính-năng\">Tính năng</h3><ul>\n<li>Phân tích front matter YAML trong các file markdown</li>\n<li>Chuyển đổi markdown sang HTML</li>\n<li>Trích xuất các section và code block</li>\n<li>Tạo output HTML với CSS đẹp</li>\n<li>Tạo output JSON để sử dụng trong các ứng dụng khác</li>\n<li>Tạo trang index để dễ dàng điều hướng</li>\n</ul><h3 id=\"mở-rộng\">Mở rộng</h3><p>Để thêm tính năng mới, bạn có thể chỉnh sửa các file sau:</p><ul>\n<li><code>src/processor.js</code>: Module xử lý các file markdown</li>\n<li><code>scripts/build.js</code>: Script build</li>\n<li><code>index.js</code>: Entry point</li>\n</ul>"
+    },
+    {
+      "title": "Xem kết quả",
+      "content": "<p>Sau khi chạy build, bạn có thể mở file <code>build/index.html</code> trong trình duyệt để xem kết quả.</p><pre><code class=\"language-bash\"># Mở file index.html trong trình duyệt (macOS)\nopen build/index.html\n</code></pre>"
+    },
+    {
+      "title": "Cấu trúc file markdown",
+      "content": "<p>Các file markdown nên có cấu trúc như sau:</p><pre><code class=\"language-markdown\">---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"iONexus\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n</code></pre><p>Front matter YAML sẽ được phân tích và sử dụng để tạo metadata cho trang.</p>"
+    }
+  ],
+  "codeBlocks": [
+    {
+      "language": "bash",
+      "code": "# Cài đặt các thư viện cần thiết\nnpm install\n"
+    },
+    {
+      "language": "bash",
+      "code": "# Chạy script build để tạo output HTML/JSON\nnpm run build\n"
+    },
+    {
+      "language": "",
+      "code": "ionexus/\n├─ src/\n│  └─ processor.js        # Module xử lý các file markdown\n├─ scripts/\n│  └─ build.js            # Script build\n├─ index.js               # Entry point\n├─ package.json           # Thông tin dự án và dependencies\n└─ build/                 # Thư mục output (tạo tự động)\n   ├─ html/               # Các file HTML\n   ├─ json/               # Các file JSON\n   ├─ assets/             # CSS và tài nguyên\n   ├─ index.html          # Trang chủ HTML\n   └─ index.json          # Danh sách tất cả các file\n"
+    },
+    {
+      "language": "bash",
+      "code": "# Mở file index.html trong trình duyệt (macOS)\nopen build/index.html\n"
+    },
+    {
+      "language": "markdown",
+      "code": "---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"iONexus\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n"
+    }
+  ]
+}

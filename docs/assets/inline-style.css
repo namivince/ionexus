@@ -1,0 +1,24 @@
+
+    /* iONexus CSS - Inline version */
+    :root {
+      --color-primary: #1A237E;
+      --color-secondary: #FF5252;
+      --color-background: #FFFFFF;
+      --color-text-primary: #212121;
+      --color-text-secondary: #757575;
+      --color-border: #E0E0E0;
+      --color-success: #16A34A;
+      --color-warning: #FFC107;
+      --color-error: #D32F2F;
+      --color-gray-50: #FAFAFA;
+      --color-gray-100: #F5F5F5;
+      --color-gray-200: #EEEEEE;
+      --color-gray-300: #E0E0E0;
+      --color-gray-400: #BDBDBD;
+      --color-gray-500: #9E9E9E;
+      --color-gray-600: #757575;
+      --color-gray-700: #616161;
+      --color-gray-800: #424242;
+      --color-gray-900: #212121;
+    }
+    

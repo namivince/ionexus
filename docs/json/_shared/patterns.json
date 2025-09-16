@@ -1,0 +1,26 @@
+{
+  "title": "Shared — Patterns",
+  "sections": [
+    {
+      "title": "Hero Search",
+      "content": "<ul>\n<li>Tabset: Buy | Rent | Commercial | Projects</li>\n<li>Input autocomplete: City/Community/Building</li>\n<li>CTA: Find</li>\n<li>Filter chips: Property Type, Beds &amp; Baths, Price, More</li>\n<li>Map toggle</li>\n</ul>"
+    },
+    {
+      "title": "Featured Section",
+      "content": "<ul>\n<li>Title + carousel/grid of cards</li>\n</ul>"
+    },
+    {
+      "title": "Explore by Area",
+      "content": "<ul>\n<li>Tile layout with image background</li>\n</ul>"
+    },
+    {
+      "title": "CTA Section",
+      "content": "<ul>\n<li>App download banner</li>\n<li>Create alert</li>\n<li>Subscribe newsletter</li>\n</ul>"
+    },
+    {
+      "title": "Footer",
+      "content": "<ul>\n<li>Multi-column nav links</li>\n<li>Social icons</li>\n<li>Legal text © iONexus</li>\n</ul>"
+    }
+  ],
+  "codeBlocks": []
+}
