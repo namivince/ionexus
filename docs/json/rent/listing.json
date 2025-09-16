@@ -2,7 +2,7 @@
   "title": "Rent Listing",
   "slug": "/rent/listing",
   "page_type": "listing",
-  "brand": "iONexus",
+  "brand": "IONEXUS",
   "sections": [
     {
       "title": "Mục tiêu",
@@ -14,13 +14,13 @@
     },
     {
       "title": "Sample JSON",
-      "content": "<pre><code class=\"language-json\">{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n</code></pre>"
+      "content": "<pre><code class=\"language-json\">{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"IONEXUS\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n</code></pre>"
     }
   ],
   "codeBlocks": [
     {
       "language": "json",
-      "code": "{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"iONexus\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n"
+      "code": "{\"items\":[{\"id\":\"r1\",\"title\":\"1BR Downtown\",\"rent\":8000,\"currency\":\"AED\"}]}\nyaml\nSao chép mã\n\n---\n\n## `rent/detail.md`\n```markdown\n---\ntitle: \"Rent Detail\"\nslug: \"/rent/property/{id}\"\npage_type: \"detail\"\nbrand: \"IONEXUS\"\n---\n\n# Rent Detail\n\n## Layout\n- Media carousel\n- Price/month\n- Specs\n- Contact form\n"
     }
   ]
 }

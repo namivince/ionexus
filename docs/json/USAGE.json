@@ -1,5 +1,5 @@
 {
-  "title": "iONexus Markdown Processor",
+  "title": "IONEXUS Markdown Processor",
   "sections": [
     {
       "title": "Cài đặt",
@@ -15,7 +15,7 @@
     },
     {
       "title": "Cấu trúc file markdown",
-      "content": "<p>Các file markdown nên có cấu trúc như sau:</p><pre><code class=\"language-markdown\">---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"iONexus\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n</code></pre><p>Front matter YAML sẽ được phân tích và sử dụng để tạo metadata cho trang.</p>"
+      "content": "<p>Các file markdown nên có cấu trúc như sau:</p><pre><code class=\"language-markdown\">---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"IONEXUS\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n</code></pre><p>Front matter YAML sẽ được phân tích và sử dụng để tạo metadata cho trang.</p>"
     }
   ],
   "codeBlocks": [
@@ -37,7 +37,7 @@
     },
     {
       "language": "markdown",
-      "code": "---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"iONexus\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n"
+      "code": "---\ntitle: \"Tiêu đề trang\"\nslug: \"/đường-dẫn\"\npage_type: \"loại-trang\"\nbrand: \"IONEXUS\"\n---\n\n# Tiêu đề chính\n\n## Section 1\nNội dung section 1\n\n## Section 2\nNội dung section 2\n"
     }
   ]
 }

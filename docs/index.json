@@ -20,21 +20,21 @@
     "title": "Authentication",
     "slug": "/auth",
     "page_type": "form",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "account/profile_account.md",
     "title": "Profile / Account",
     "slug": "/account/profile",
     "page_type": "profile",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "agents/find_agent.md",
     "title": "Find Agent",
     "slug": "/agents",
     "page_type": "listing",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "buy/buy_overview.md",
@@ -49,60 +49,60 @@
     "title": "Buy Listing",
     "slug": "/buy/listing",
     "page_type": "listing",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "commercial/commercial_overview.md",
     "title": "Commercial Overview",
     "slug": "/commercial",
     "page_type": "overview",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "commercial/detail.md",
     "title": "Commercial Detail",
     "slug": "/commercial/property/{id}",
     "page_type": "detail",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "commercial/listing.md",
     "title": "Commercial Listing",
     "slug": "/commercial/listing",
     "page_type": "listing",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "landing/landing_page.md",
-    "title": "Landing Page — iONexus",
+    "title": "Landing Page — IONEXUS",
     "slug": "/",
     "page_type": "landing",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "mortgages/mortgages_overview.md",
     "title": "Mortgages Overview",
     "slug": "/mortgages",
     "page_type": "overview",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "projects/project_detail.md",
     "title": "Project Detail",
     "slug": "/projects/{slug}",
     "page_type": "detail",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "projects/projects_overview.md",
     "title": "Projects Overview",
     "slug": "/projects",
     "page_type": "overview",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "README.md",
-    "title": "iONexus UI Mockup Spec"
+    "title": "IONEXUS UI Mockup Spec"
   },
   {
     "path": "rent/detail.md",
@@ -113,7 +113,7 @@
     "title": "Rent Listing",
     "slug": "/rent/listing",
     "page_type": "listing",
-    "brand": "iONexus"
+    "brand": "IONEXUS"
   },
   {
     "path": "rent/rent_overview.md",
@@ -121,6 +121,6 @@
   },
   {
     "path": "USAGE.md",
-    "title": "iONexus Markdown Processor"
+    "title": "IONEXUS Markdown Processor"
   }
 ]
